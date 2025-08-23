@@ -1,0 +1,30 @@
+git add .
+git commit -m "Your message"
+git push origin main
+
+1. Add a specific file
+
+Example: You only want to add index.js
+
+git add index.js
+
+
+2. Add a specific folder
+
+Example: You want to add the whole arrays folder (with all files inside):
+
+git add arrays/
+
+3. Add multiple files/folders together
+git add index.js utils.js arrays/
+
+
+4. VS Code way
+
+Open Source Control panel (Ctrl + Shift + G).
+
+You’ll see all changed files.
+
+Click the + (stage) next to only the file(s) or folder(s) you want.
+
+Commit → Push.
