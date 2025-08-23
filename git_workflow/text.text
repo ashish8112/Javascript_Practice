@@ -3,28 +3,67 @@ git commit -m "Your message"
 git push origin main
 
 1. Add a specific file
-
 Example: You only want to add index.js
-
 git add index.js
 
-
 2. Add a specific folder
-
 Example: You want to add the whole arrays folder (with all files inside):
-
 git add arrays/
 
 3. Add multiple files/folders together
 git add index.js utils.js arrays/
 
-
 4. VS Code way
-
 Open Source Control panel (Ctrl + Shift + G).
 
+
 You’ll see all changed files.
-
 Click the + (stage) next to only the file(s) or folder(s) you want.
+Commit → Push.
 
-Commit → Push.	
+
+This is about keeping your local repo (on your PC with VS Code) and your GitHub repo (where Codespace made files online) in sync.
+
+🔹 Example
+
+You created loops.js file in your GitHub Codespace.
+Your GitHub repo now has loops.js.
+
+But your local repo (cloned earlier) doesn’t know yet.
+To update your local repo:  git pull origin main
+
+Now your loops.js will also show up in your VS Code project folder ✅
+
+🔹 How to keep them in sync
+
+If you code online in Codespace → pull changes in VS Code:  git pull origin main
+If you code locally in VS Code → push changes:
+git add .
+git commit -m "message"
+git push origin main
+
+This way, both sides stay updated.
+
+🔹 VS Code GUI way
+
+Open the Source Control panel (Ctrl+Shift+G).
+If there are changes online, VS Code will show a notification → “Pull”.
+Just click it, and your local repo will get updated files.
+
+
+
+⚠️ Important: If you edit the same file in Codespaces and locally without syncing, you might get a merge conflict. 
+    In that case, Git will ask you to resolve which version to keep.
+
+
+
+
+
+
+
+
+
+
+
+
+
