@@ -24,4 +24,4 @@ function call_back()
 {
     console.log("Promise succeded");
 }
-p.then(call_back);;
+p.then(call_back);
