@@ -1,19 +1,10 @@
  class OwnPromise{
     constructor(fn){
-        // this.fn=fn; // Althoug there is no need to pass fn in this.fn.
-        fn(()=>{
+        // this.fn=fn; // Although there is no need to pass fn in this.fn because it is in same scope.
+        fn(()=>{  
             console.log("inside fn");
-            this.resolve();
+            this.resolve(); // this.resolve will be assigned with function then(afterReturningfromReadFile)
             })  
-        // function afterDone(){
-
-        //      this.resolve();
-        //  }
-        
-        
-        //  fn(afterDone);
-
-
     }
     then(receiver_from_then_function)
     {
@@ -25,8 +16,8 @@
  {
     setTimeout(function(){
         console.log("call back based setTimout is  completed");
-        p.resolve();
-        },3000);
+        resolve(); // body of arrow function is executing here or we can say fn==readFile function is called in constructor and arrow function inside that 
+        },3000);   //came here as function argument and stored in resolve() function and whenever timeout completed it called that Arrow function and it is executing here without object.arrow becuace arrow function auto bind with instance of class and Arrow function calls this.resolve
     }
 function setTimeoutPromised(){
     return new OwnPromise(readFile);

@@ -86,5 +86,9 @@ setTimeout(()=>{
     console.log("5.Unlike Traditional function we are writing arrow function in function  parameter of setTimeout , It is a Arrow function as callback")
 },5000);
 
+// Arrow functions auto-bind this to the class instance. see Advantage_of_Arrow_In_Promise.js program.
+
+
+
 
 
