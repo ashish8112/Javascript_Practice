@@ -1,0 +1,19 @@
+Promise works in series / order of function 
+
+suppose 
+function random(resolve) 
+{
+    console.log("Promise executed it will give us something )
+    resolve();
+}
+
+let p = new promise(random);
+
+function promise_executed_or_youcansay_callback()
+{
+    console.log("Promise exeucted becuase resolve() function executed now  this function run  after getting executed .)
+}
+
+* Here random is function which will execute by constructor of promise class .
+*Whenvever function parameter of random function will executed then we can say promise is executed and it will give us output or it will execute what we wants 
+*And then Promise excute callback function with -> p.then(callback)

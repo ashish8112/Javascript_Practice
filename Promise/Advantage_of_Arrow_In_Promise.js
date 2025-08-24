@@ -29,7 +29,7 @@ class Person2 {
 }
 
 let p2 = new Person2("Ashish");
-setTimeout(p2.arrowMethod, 1000);
+setTimeout(p2.arrowMethod, 1000); // It will show Arrow : Ashish 
 
 console.log("Because arrow functions don’t have their own this. ");
 console.log("They capture (or close over )the this value from where they were created.In this case,");
@@ -55,5 +55,7 @@ class Check_Promise{
 function readFile(resolve)
 {
     resolve(); // It can't called without arrow function becuase while running function javascript engine loose the connection this object , but arrow function that is auto bind with instance of class.
+            //This function is getting called becuase enitre function comes here with instanceClass.arrow (object.resolve) becuase it is always gets auto bind with instance of class .
+                //Note it can only happen when sending arrow function as argument , we cannot call arrow function mannually without obj.arrow();
 }
 let p3=new Check_Promise(readFile);
