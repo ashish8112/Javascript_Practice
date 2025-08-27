@@ -1,4 +1,4 @@
-function isAnagram(OneName,AnotherName)
+function isAnagram(OneName,AnotherName)// In this function string will be compare but no with case (Upper/Lower Case)
 {
     let firstName=OneName.split(""); // It converts string into array, each letter at each index
     let SecondName=AnotherName.split("");
@@ -11,6 +11,26 @@ function isAnagram(OneName,AnotherName)
     firstName=firstName.join(""); // It will join array in string
     SecondName=SecondName.join("");
     if(firstName===SecondName)
-        console.log("These two are Anagram ");
+        console.log(OneName+" and  "+AnotherName+" are Anagram");
+    else 
+        console.log(OneName+" and  "+AnotherName+" are not Anagram ");// Although rahul and RAHUL are anagram but this function is confused between lower case and Upper Case.
 }
-isAnagram("Ashish","shishA");
+isAnagram("Ashish","shishA"); 
+isAnagram("rahul","RAHUL");
+isAnaGram("rahul","RAHUL");
+
+function isAnaGram(OneName,AnotherName) // In this function string will be compare with any test case or condition .
+{
+    let firstName=OneName.toLowerCase();
+    let SecondName=AnotherName.toLowerCase();
+    firstName=firstName.split("");
+    firstName=firstName.sort();
+    firstName=firstName.join("");
+    SecondName=SecondName.split("");
+    SecondName=SecondName.sort();
+    SecondName=SecondName.join("");
+    if(firstName===SecondName)
+    {
+        console.log(OneName+" and "+AnotherName+" are Anagram ");
+    }
+}
