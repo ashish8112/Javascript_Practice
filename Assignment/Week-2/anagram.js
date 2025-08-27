@@ -21,14 +21,14 @@ isAnaGram("rahul","RAHUL");
 
 function isAnaGram(OneName,AnotherName) // In this function string will be compare with any test case or condition .
 {
-    let firstName=OneName.toLowerCase();
-    let SecondName=AnotherName.toLowerCase();
-    firstName=firstName.split("");
-    firstName=firstName.sort();
-    firstName=firstName.join("");
-    SecondName=SecondName.split("");
-    SecondName=SecondName.sort();
-    SecondName=SecondName.join("");
+    let firstName=OneName.toLowerCase().split("").sort().join("");
+    let SecondName=AnotherName.toLowerCase().split("").sort().join("");
+    // firstName=firstName.split("");
+    // firstName=firstName.sort();
+    // firstName=firstName.join("");
+    // SecondName=SecondName.split("");
+    // SecondName=SecondName.sort();
+    // SecondName=SecondName.join("");
     if(firstName===SecondName)
     {
         console.log(OneName+" and "+AnotherName+" are Anagram ");
