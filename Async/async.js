@@ -3,6 +3,6 @@ function read(err,data)// To use callback of reading file the function should ha
 {
     console.log(data);
 }
-let a=fs.readFile("a.txt","utf-8",read);
+let a=fs.readFile("Async/a.txt","utf-8",read);
 console.log("2");
-fs.readFile("demo.txt","utf-8",read);
+fs.readFile("Async/demo.txt","utf-8",read);
