@@ -5,4 +5,4 @@ function counter(){
     count++;
     
 }
-setInterval(counter,1000);
+setInterval(counter,1000); // will call continously to function counter after each 1sec interval.

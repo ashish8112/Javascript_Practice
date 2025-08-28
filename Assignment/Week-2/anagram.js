@@ -18,10 +18,10 @@ function isAnagram(OneName,AnotherName)// In this function string will be compar
 isAnagram("Ashish","shishA"); 
 isAnagram("rahul","RAHUL");
 isAnaGram("rahul","RAHUL");
-
+//Note : split(); is delbetar function which remove that thing from string and make array for context search online 
 function isAnaGram(OneName,AnotherName) // In this function string will be compare with any test case or condition .
 {
-    let firstName=OneName.toLowerCase().split("").sort().join("");
+    let firstName=OneName.toLowerCase().split("").sort().join(""); // we can chain function calls 
     let SecondName=AnotherName.toLowerCase().split("").sort().join("");
     // firstName=firstName.split("");
     // firstName=firstName.sort();

@@ -1,7 +1,7 @@
  class OwnPromise{
     constructor(fn){
         // this.fn=fn; // Although there is no need to pass fn in this.fn because it is in same scope.
-        fn(()=>{  
+        fn(()=>{   // calling fn function and sending a function as argument .
             console.log("inside fn");
             this.resolve(); // this.resolve will be assigned with function then(afterReturningfromReadFile)
             });  

@@ -2,7 +2,7 @@ let count =1;
 function callback()
 {
     console.clear();
-    console.log(count+" sec passed");
+    console.log(count+" sec passed"); // count is global variable
     count++;
     setTimeout(callback,1000);
 }
