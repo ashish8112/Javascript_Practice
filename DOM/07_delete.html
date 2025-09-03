@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>My first Webpage </title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing: border-box;
+
+            }
+            .heading{
+                text-align: center;
+                font-size:large;
+                background-color: grey;
+            }
+            .list{
+                font-weight: bold;
+                margin-left:50px;
+            }
+            label{
+                display:block;
+                text-align: center;
+            }
+            
+            .input{
+                text-align: center;
+                margin-left:40%;
+                margin-bottom: 10px;
+            }
+            button{
+                background-color: yellow;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color:red;
+                margin-right:150px;
+                border:2px solid black; 
+                height: fit-content;
+            }
+
+            </style>
+    </head>
+    <body>
+        <p class="heading">Todo List </p>
+        <div class="list"> 
+            <div style="display: flex; gap: 15px;" id="todo-1">
+                <p>1.Take class</p>
+                <button onclick="del(1)">Delete</button>
+             </div>
+            <div style="display: flex;gap:15px;" id="todo-2">
+            <p>2.Go</p>
+            <button onclick="del(2)">Delete</button>
+            </div>
+    </div>
+         <h1 id="first">Hello</h1> <!-- for selector or query selector id shouldn't start with number. -->
+        <input type="text" name="todo" id="1" class="input">
+        <label for="1"><button onclick="addTodo()">Add Todo </button></label>
+        <script>
+            function del(index) // Deleting always occurs of child element not parent , through parent we delete child element.
+            {
+                let element=document.querySelector("#todo-"+index);
+                element.parentNode.removeChild(element); // this will delete enitre child of div class list. becuase through elemen.parentNode we are telling for list class div.
+                // document.querySelector("#todo-" + index).parentNode.removeChild(document.querySelector("#todo-" + index));
+                
+            }
+            </script>
+        
+    </body>
+</html>

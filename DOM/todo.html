@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List </title>
+    </head>
+    <body>
+        <input type="text" style ="margin-bottom: 20px;">
+        
+        <div class="parent" style ="display: flex; gap:75px">
+            <button onclick = "add()">Add </button>
+            <button onclick="del()">Delete</button>
+        </div style="margin-bottom=30px;">
+        <ol>
+
+        </ol>
+    </body>
+    <script>
+        function add()
+        {
+            let create_element=document.createElement("li");
+            let fetch = document.querySelector("input").value;
+            create_element.innerHTML=fetch;
+            let append_element = document.querySelector("ol");
+            append_element.appendChild(create_element);
+        }
+        function del()
+        {
+            let element=document.querySelector("li");
+            element.parentNode.removeChild(element);
+        }
+        </script>
+</html>
