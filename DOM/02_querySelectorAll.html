@@ -1,0 +1,64 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>My first Webpage </title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing: border-box;
+
+            }
+            .heading{
+                text-align: center;
+                font-size:large;
+                background-color: grey;
+            }
+            .list{
+                font-weight: bold;
+                margin-left:50px;
+            }
+            label{
+                display:block;
+                text-align: center;
+            }
+            
+            .input{
+                text-align: center;
+                margin-left:40%;
+                margin-bottom: 10px;
+            }
+            button{
+                background-color: yellow;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color:red;
+                margin-right:150px;
+                border:2px solid black; 
+                height: fit-content;
+            }
+
+            </style>
+    </head>
+    <body>
+        <p class="heading">Todo List </p>
+        <ol class="list">
+            <li>Take class </li>
+            <li>Go</li>
+        </ol>
+         <h1 id="first" style="font-size: medium;">Hello</h1> <!-- for selector or query selector id shouldn't start with number. -->
+         <h1 style="font-size: medium;">Hello there </h1>
+        <input type="text" name="todo" id="1" class="input">
+        <label for="1"><button onclick="addTodo()">Add Todo </button></label>
+        <script>
+            function addTodo()
+            {
+               console.log(document.querySelector("li").innerHTML); // It will show innerHTML of first li only 
+            //    console.log(document.querySelectorAll("h1").innerHTML); // *Undefined Output * innerHTML returns a single HTML element not a nodeList so we have to do mannually. to see innerContent.
+               console.log(document.querySelectorAll("li")); //it will show all li of document
+               console.log(document.querySelectorAll("li")[0].innerHTML); // This will show innerHTML now . not undefined 
+               console.log(document.querySelectorAll("li")[1])// This will show entire  content of 1st list .  // <li> Go </li>
+            }
+            </script>
+        
+    </body>
+</html>

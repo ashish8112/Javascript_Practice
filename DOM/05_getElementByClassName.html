@@ -3,6 +3,12 @@
     <head>
         <title>My first Webpage </title>
         <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing: border-box;
+
+            }
             .heading{
                 text-align: center;
                 font-size:large;
@@ -10,6 +16,7 @@
             }
             .list{
                 font-weight: bold;
+                margin-left:50px;
             }
             label{
                 display:block;
@@ -25,18 +32,32 @@
                 background-color: yellow;
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                 color:red;
+                margin-right:150px;
+                border:2px solid black; 
+                height: fit-content;
             }
 
             </style>
     </head>
     <body>
         <p class="heading">Todo List </p>
-        <ol class="list">
+        <ol class="Data">
             <li>Take class </li>
             <li>Go</li>
         </ol>
+         <h1 id="first" style="font-size: medium;">Hello</h1> <!-- for selector or query selector id shouldn't start with number. -->
+         <h1 style="font-size: medium;">Hello there </h1>
+         <h6 class="Data">Check</h6>   
         <input type="text" name="todo" id="1" class="input">
-        <label for="1"><button>Add Todo </button></label>
+        <label for="1"><button onclick="addTodo()">Add Todo </button></label>
+
+        <script>
+            function addTodo()
+            {
+              console.log(document.getElementsByClassName("Data")); // there is no need to give . for accessing by Class .
+              
+            }
+            </script>
         
     </body>
-</html>
+</html> 
