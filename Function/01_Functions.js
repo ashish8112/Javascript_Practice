@@ -15,7 +15,7 @@ SayHello();
 
 
 //Arrow function of above function.
-let sayHeLlo = () =>{       // similar to assignment and  traditional function suppose it is a assignment function and with without function keyword and => operator
+let sayHeLlo = () =>{       // similar to assignment and  traditional function ,suppose it is a assignment function and  without function keyword and => operator
     console.log("1. Hello in Arrow function ");
 }
 sayHeLlo();// Difference = Removed function Keyword . Added => after parameter list.
