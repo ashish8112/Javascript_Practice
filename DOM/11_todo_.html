@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List </title>
+    </head>
+    <body>
+        <input type="text" style ="margin-bottom: 20px;">
+        
+        <span class="parent" style ="display: flex; gap:75px">
+            <button onclick = "add()">Add </button>
+            <button onclick="dele()">Delete</button> <!-- This will used to delete from beginning -->
+        <span style="margin-bottom : 30px;">
+    </body>
+    <script>
+        let ctr=1;
+        function add()
+        {
+            //Created Span Element ,Button and Div Element
+            let spanE=document.createElement("span");
+            spanE.innerHTML=document.querySelector("input").value;
+            let buttonE=document.createElement("button");
+            buttonE.innerHTML="Delete";
+            let divE=document.createElement("div");
+            
+            //now append every element.
+            divE.appendChild(spanE);
+            divE.appendChild(buttonE);
+            document.querySelector("body").appendChild(divE);
+            ctr++;
+           
+            //Adding Attribute 
+            spanE.setAttribute("class","todo"+ctr);
+            buttonE.setAttribute("class","todo"+ctr);
+            buttonE.setAttribute("style","margin-left:15px")
+            buttonE.setAttribute("onclick","del("+ctr+")");
+            divE.setAttribute("id","todo"+ctr);
+        }
+        function del(index)
+        {     
+                let element=document.querySelector("#todo"+index);
+                element.parentNode.removeChild(element);
+                // let elements=document.getElementsByClassName("todo"+index);
+                // while (elements.length > 0) { // I used this to remove all element .
+                //  elements[0].parentNode.removeChild(elements[0]);
+                 // or choose parent div of span and button and delete that div .
+                    
+                }
+        function dele()
+        {
+            let element=document.querySelector("div");
+            element.parentNode.removeChild(element);
+        }
+        </script>
+</html> 
