@@ -24,8 +24,7 @@
             let fetch = document.querySelector("input").value;
 
             create_element.innerHTML=fetch+"<button onclick='del("+ctr+")'>Delete</button>";
-            let append_element = document.querySelector("ol");
-            append_element.appendChild(create_element);
+            document.querySelector("ol").appendChild(create_element);
             ctr++;
         }
         function del(index)
