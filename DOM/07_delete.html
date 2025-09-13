@@ -57,7 +57,7 @@
         <script>
             function del(index) // Deleting always occurs of child element not parent , through parent we delete child element.
             {
-                let element=document.querySelector("#todo-"+index);
+                let element=document.querySelector("#todo-"+index);//Or use only number as id also . becuase js support number only as id but not css.
                 element.parentNode.removeChild(element); // this will delete enitre child of div class list. becuase through elemen.parentNode we are telling for list class div.
                 // document.querySelector("#todo-" + index).parentNode.removeChild(document.querySelector("#todo-" + index));
                 

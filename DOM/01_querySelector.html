@@ -45,8 +45,9 @@
             <li>Take class </li>
             <li>Go</li>
         </ol>
-         <h1 id="first">Hello</h1> <!-- for selector or query selector id shouldn't start with number. -->
-        <input type="text" name="todo" id="1" class="input">
+         <h1 id="first">Hello</h1> <!--you cannot start an id with just a number if you want to use it directly in CSS selectors.-->
+        <input type="text" name="todo" id="1" class="input"> <!--Yes — JavaScript doesn’t mind if an element’s id is just a number, you can still get it.
+But you have to be careful when using querySelector, because it uses CSS selector syntax.-->
         <label for="1"><button onclick="addTodo()">Add Todo </button></label>
         <script>
             function addTodo()
