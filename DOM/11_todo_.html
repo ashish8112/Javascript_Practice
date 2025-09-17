@@ -26,7 +26,6 @@
             divE.appendChild(spanE);
             divE.appendChild(buttonE);
             document.querySelector("body").appendChild(divE);
-            ctr++;
            
             //Adding Attribute 
             spanE.setAttribute("class","todo"+ctr);
@@ -34,6 +33,8 @@
             buttonE.setAttribute("style","margin-left:15px")
             buttonE.setAttribute("onclick","del("+ctr+")");
             divE.setAttribute("id","todo"+ctr);
+
+            ctr++;
         }
         function del(index)
         {     
