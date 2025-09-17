@@ -22,13 +22,6 @@ const fs =require("fs");
     {
         console.log(error);
         // console.log('error ');
-    }
-//      try {
-//     const data = await readFileAsync();
-//     console.log("File content:", data);
-//   } catch (err) {
-//     console.error("Error reading file:", err);
-//   }
-    
+    }  
  }
  solve();
