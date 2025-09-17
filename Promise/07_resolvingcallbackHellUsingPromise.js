@@ -7,7 +7,7 @@ function setPromisifiedpromise(duration)
     // return new promise ((resolve)=>{
     //     return setTimeout(resolve,1000);
     // });
-    return new Promise(resolve=>setTimeout(resolve,duration));
+    return new Promise(resolve=>setTimeout(resolve,duration));// return will first call the setTimeout and then go back where this setPromisifedpromise fucntion called.
 }
 setPromisifiedpromise(1000).then(function(){
     console.log("Hii");
