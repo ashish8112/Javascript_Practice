@@ -8,6 +8,7 @@
         <button onclick="todo()">Add Todo </button>
         <button onclick="fDelete()">FirstDelete </button>
         <button onclick="lsDelete()">LastSecondDelete</button>
+        <button onclick="lDelete()">LastDelete</button>
         <div class="todo"></div>
     </body>
     <script>
@@ -33,12 +34,19 @@
             document.querySelector(".todo").appendChild(div);
         }
     }
+    // arrayName.splice(index_from_to_delete,number_of_element_to_be_deleted_from_that_index);
+    // todos
         function fDelete(){
-            todos.splice(todos[0],1);
+            todos.splice(0,1);
             addTodo();
         }
         function lsDelete(){
             todos.splice(todos.length-2,1);
+            addTodo();
+        }
+        function lDelete()
+        {
+            todos.pop();
             addTodo();
         }
         </script>
