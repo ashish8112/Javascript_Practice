@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Using Splice.</title>
+    </head>
+    <body>
+        <input type="text">
+        <button onclick="todo()">Add Todo </button>
+        <button onclick="fDelete()">FirstDelete </button>
+        <button onclick="lsDelete()">LastSecondDelete</button>
+        <div class="todo"></div>
+    </body>
+    <script>
+        let todos=[];
+        function todo()
+        {
+        todos.push({title:document.querySelector("input").value});
+        addTodo();
+        }
+        function addTodo(){
+            document.querySelector(".todo").innerHTML="";
+        
+            for(let i=0;i<todos.length;i++)
+        {
+            const todo=todos[i];
+            let div=document.createElement("div");
+            let h1=document.createElement("h1");
+            let button=document.createElement("button");
+            button.innerHTML="Delete";
+            h1.innerHTML=todo.title;
+            div.appendChild(h1);
+            div.appendChild(button);
+            document.querySelector(".todo").appendChild(div);
+        }
+    }
+        function fDelete(){
+            todos.splice(todos[0],1);
+            addTodo();
+        }
+        function lsDelete(){
+            todos.splice(todos.length-2,1);
+            addTodo();
+        }
+        </script>
+</html>
+    
