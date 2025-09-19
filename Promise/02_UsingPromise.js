@@ -9,7 +9,7 @@ function readTheFile(sendTheFinalValueHere){
 
 function readFile()
 {
-    return new Promise(readTheFile);
+    return new Promise(readTheFile); 
 }
 const p= readFile();
 function callback(content)
