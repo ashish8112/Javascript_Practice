@@ -3,7 +3,7 @@ function setTimeoutPromisified(duration)
     // return new Promise ((resolve)=>{   // or we can use normal function here as well .
     //     setTimeout(resolve,duration);  // setTimeout => Promisifed SetTimeout 
     // });
-    return new Promise (function (resolve){  
+    return new Promise (function (resolve){  // Note: Promise always return something that's why it should called with return.
         setTimeout(resolve,duration);      
     });                                    
 }                                           
