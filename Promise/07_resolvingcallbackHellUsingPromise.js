@@ -7,9 +7,10 @@ function setPromisifiedpromise(duration)
     // return new promise ((resolve)=>{
     //     return setTimeout(resolve,1000);
     // });
+    //in below line we are sending arrow function in constructor which is calling it which have parameter of resolve and return statement .
     return new Promise(resolve=>setTimeout(resolve,duration));// return will first call the setTimeout and then go back where this setPromisifedpromise fucntion called.
 }
-setPromisifiedpromise(1000).then(function(){
+setPromisifiedpromise(1000).then(function(){// basically setPromisifiedpromise(1000) stores the object of promise class with that obj.then()
     console.log("Hii");
     return setPromisifiedpromise(3000); // it will again call setPromisifiedpromise with 3 sec duration , think about recursion sort of because before returning it call the function and take something as promise return something which
 }).then(function(){   //  gets execute another line or step up, because of returning that setPromisifedpromise function ,now till then() of first it will act as singleLine and again with that I am doing .then() ,
