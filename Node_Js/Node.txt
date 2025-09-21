@@ -1,0 +1,7 @@
+We don't need to send or upload enter node_modules which is very heavy in size .
+We just need to send package.json file along with our programs.
+
+Where all dependecies or library used in my program are written . 
+other user or third party just need to run command -> npm install . 
+
+It will download all required libraries in there system .
