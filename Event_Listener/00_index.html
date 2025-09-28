@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Listener </title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color:#414141;
+                color:aliceblue;
+                margin-left:20px;
+                padding-top: 20px;
+            }
+            </style>
+    </head>
+    <body>
+        <ul class="images">
+            <li><img src="https://plus.unsplash.com/premium_photo-1756383544375-2705f502b1e8?q=80&w=1069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="265px" alt="Dog" id="Dog"></li>
+            <li><img src="https://images.unsplash.com/photo-1758461484955-0f478989ac0f?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="265px" alt="Sea" id ="Sea" ></li>
+            <li><img src="https://images.unsplash.com/photo-1758640920730-a4b27cd8aa21?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0M3x8fGVufDB8fHx8fA%3D%3D" height="=200px" width="265px" alt="friends" id="Friends"></li>
+            <li><img src="https://images.unsplash.com/photo-1758644083602-15a9645a92a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="265px" alt="Mountain" id="Mountain"></li>
+            <li><img src="https://images.unsplash.com/photo-1758609179675-a284dc57fd7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1OHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="265px" alt="City" id="City"></li>
+            <li><img src="https://images.unsplash.com/photo-1756982784804-8b0e9d4cab86?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2Mnx8fGVufDB8fHx8fA%3D%3D" height="200px" width="265px" alt="Family" id="Family"></li>
+        </ul>
+    </body>
+    <script>
+        // Either Create function with onclick() attribute in html tag or use below approach
+        document.getElementById("Dog").onclick= function(){
+            alert("Dogs");
+        }
+        document.getElementById("Sea").addEventListener("click",function(){
+            alert("Hello from Sea");
+        },false);
+        </script>
+</html>
