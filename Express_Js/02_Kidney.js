@@ -1,6 +1,6 @@
-const express = require("express");
-const app = express();
-
+const express = require("express"); // Importing express framework in Node.js .
+const app = express(); // require is used to return function like above and that creates internally one **Express application object**.
+// Now all methods of express is in app object so we can use app.get(),app.use(),app.post() etc.  
 const user = [{
     name:"John",
     kidneys: [{
