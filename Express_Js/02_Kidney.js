@@ -17,8 +17,8 @@ const user = [{
 // app.listen(3000);
 
 app.use(express.json()); 
-app.get("/",function(req,res){
-    const numberOfKidneys = user[0].kidneys.length;
+app.get("/",function(req,res){ // get is used to read the data. 
+    const numberOfKidneys = user[0].kidneys.length; // In every api call like post or delete this line or this block execute agin .
     let numberOfHealthyKidneys=0;
     for(let i=0;i<numberOfKidneys;i++){
             if(user[0].kidneys[i].healthy===true)
@@ -29,7 +29,7 @@ app.get("/",function(req,res){
 
 });
 
-app.post("/",function(req,res){
+app.post("/",function(req,res){ // post is used to create new data or new data.
     const isHealthy=req.body.isHealthy; // This is body query so in postman i need to write body is { isHealthy= true } for healthy and false for unhealthy.
     user[0].kidneys.push({
         healthy:isHealthy // we can give only boolean input because healthy is global variable in user array.
@@ -39,7 +39,7 @@ app.post("/",function(req,res){
     });
 });
 
-//
+//put is used to update existing data.
 app.put("/",function(req,res){ // There is no body query so although anything written in body will it will affect this .
     for(let i=0;i<user[0].kidneys.length;i++)// This function will convert all unhealthy to healthy kidney.
     {
@@ -49,7 +49,7 @@ app.put("/",function(req,res){ // There is no body query so although anything wr
     res.json({});
 })
 
-//Only if atleast one unhealthy kidney is there do this, else return 411.
+//Only if atleast one unhealthy kidney is there do this, else return 411 and status code depends on programmer what he/she wants to give.
 app.delete("/",function(req,res){
     let checkUnhealthy=atleastOneunhealthy();
     if(checkUnhealthy>0){
