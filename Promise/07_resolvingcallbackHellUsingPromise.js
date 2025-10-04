@@ -9,6 +9,7 @@ function setPromisifiedpromise(duration)
     // });
     //in below line we are sending arrow function in constructor which is calling it which have parameter of resolve and return statement .
     return new Promise(resolve=>setTimeout(resolve,duration));// return will first call the setTimeout and then go back where this setPromisifedpromise fucntion called.
+    // in above resolve is parameter in arrow function.
 }
 setPromisifiedpromise(1000).then(function(){// basically setPromisifiedpromise(1000) stores the object of promise class with that obj.then()
     console.log("Hii");
