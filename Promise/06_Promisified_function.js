@@ -8,7 +8,7 @@ function setTimeoutPromisified(duration)
     });                                    
 }                                           
 
-let callback = () =>
+let callback = () => // arrow function
 {
     console.log("Promise succeded after 1sec");
 }
