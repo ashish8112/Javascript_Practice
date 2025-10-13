@@ -13,10 +13,15 @@ function setPromisifiedpromise(duration)
 }
 setPromisifiedpromise(1000).then(function(){// basically setPromisifiedpromise(1000) stores the object of promise class with that obj.then()
     console.log("Hii");
-    return setPromisifiedpromise(3000); // it will again call setPromisifiedpromise with 3 sec duration , think about recursion sort of because before returning it call the function and take something as promise return something which
-}).then(function(){   //  gets execute another line or step up, because of returning that setPromisifedpromise function ,now till then() of first it will act as singleLine and again with that I am doing .then() ,
+    return setPromisifiedpromise(3000); // it will again return object of promise which executes it's next .then() function
+}).then(function(){  
     console.log("Hello");//like OneName.toLowerCase().split("").sort().join(""); // we can chain function calls 
     return setPromisifiedpromise(5000);
 }).then(function(){
     console.log("hello there ");
 })
+// It is similar to this 
+// Promise p2 = p1.then(fn1);
+// Promise p3 = p2.then(fn2);
+// Promise p4 = p3.then(fn3);
+
