@@ -1,0 +1,8 @@
+default port 
+http => 80
+https => 443 like https://google.com == https://google.com:443 
+
+Read=> Get method
+Create => Post method
+Update => Put method
+Delete => Delete method
