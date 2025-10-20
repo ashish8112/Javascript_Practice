@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .parent{
+            height: 25rem;
+            width: 25rem;
+            border:2px solid black;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            align-items: center;
+        }
+        .image{
+            height: 20rem;
+            width:100%;
+        }
+        .image img{
+            height: 100%;
+            width: 100%;
+        }
+        </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="image">
+            <img src="https://avatars.githubusercontent.com/u/11613311?v=4">
+        </div>
+        <div class="follower">
+            <h4>followers : 100</h4>
+        </div>
+    </div>
+</body>
+</html>

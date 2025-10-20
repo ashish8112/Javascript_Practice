@@ -11,7 +11,7 @@ app.get("/files/:fileName",function(req,res){ // Note give the file name of this
         })
     });
 });
-app.listen(3000);
+app.listen(3000);// Now it will run server on specific host or port.
 
 
 // req.params is an object on the request (req) that holds parameters from the URL's path (also called named route parameters). For instance, in a route like /user/:name, the req.params object would contain req.params.name, holding the value from the URL, such as in /user/Alice, where req.params.name would be Alice

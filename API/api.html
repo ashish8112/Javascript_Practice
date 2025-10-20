@@ -1,0 +1,69 @@
+<!-- How to fetch API using XMLhttp -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <title>API Understanding</title>
+ </head>
+ <body>
+    <p>To read and Understand Api => <i><b><a href="https://jsonformatter.org/" target="_blank">jsonformatter</a></b></i></p>
+    <h2>To read More About XMLhttpRequest go to MDN XMLhttpRequest </h2>
+    <pre>The constructor initializes an XMLHttpRequest. It must be called before any other method calls.  let xhr = new XMLHttpRequest();
+        <b>XMLHttpRequest.readyState Read only Returns a number representing the state of the request.</b>
+        The <b>XMLHttpRequest.readyState </b>property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+        <table border="" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th> Value</th>
+                    <th> State </th>
+                    <th> Description </th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>UNSENT </td>
+                    <td>Client has been created. open() not called yet.</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>OPENED</td>
+                    <td>open() has been called.</td>
+                </tr>
+                 <tr>
+                    <td>2</td>
+                    <td>HEADERS_RECEIVED</td>
+                    <td>send() has been called, and headers and status are available.</td>
+                </tr> <tr>
+                    <td>3</td>
+                    <td>LOADING</td>
+                    <td>Downloading; responseText holds partial data.</td>
+                </tr> <tr>
+                    <td>4</td>
+                    <td>DONE</td>
+                    <td>The operation is complete.</td>
+                </tr>
+            </tbody>
+        </table>
+    </pre>
+ </body>
+ <script>
+    const requestUrl="https://api.github.com/users/ashish8112";
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET",requestUrl);
+    console.log("state=",xhr.readyState);
+    xhr.onreadystatechange=function() // asynchronous function it will run when state of xmlhttprequest changes 
+    {
+        console.log("state =",xhr.readyState);
+        if(xhr.readyState===4){
+            let data=(this.responseText);
+            console.log(data,"type of data=",typeof data);// it will return string type .
+            //so convert it in json / object
+            data=JSON.parse(data);
+            console.log(typeof data);
+            //we will fetch our follower 
+            console.log(data.followers);
+        }
+    }
+    xhr.send(); // It is sending request 
+    </script>
+ </html>
