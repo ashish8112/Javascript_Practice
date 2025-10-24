@@ -6,3 +6,9 @@ Read=> Get method
 Create => Post method
 Update => Put method
 Delete => Delete method
+
+// GET → Used to read or fetch data from the server 
+// POST → Used to send or add new data to the server.
+// PUT  → Used to update or replace existing data on the server.
+// DELETE → Used to remove data from the server.
+

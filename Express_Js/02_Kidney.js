@@ -7,6 +7,9 @@ const user = [{
     ]
 }];
 app.use(express.json());
+
+//all route handlers.with method get , put,post and delete and route are localhost:3000/ -> the text starts with / are routes.
+// route handler -> app.get("/",function(xyz)){}
 app.get("/",function(req,res){
     const totalKidney=user[0].kidneys.length;
     let numberOfHealthyKidneys=0;
@@ -70,4 +73,4 @@ function checkUnhealthy()
     }
 }
 
-app.listen(3000);
+app.listen(3000); // which port like here 3000.
