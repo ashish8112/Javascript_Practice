@@ -25,3 +25,10 @@ setPromisifiedpromise(1000).then(function(){// basically setPromisifiedpromise(1
 // Promise p3 = p2.then(fn2);
 // Promise p4 = p3.then(fn3);
 
+// Or think like that .then(functionName) // means here we call called function so it return object of promise 
+//becuase at end of function we have returned a new object of promise 
+// so let p =  .then(functionName) 
+// so p stores object of returned promise class so 
+// now we can do p.then() again 
+// that why chainning is working here 
+// .then(FunctionName) -> become objectName of promise and - > .then(functionName).then() we can perform.

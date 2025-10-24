@@ -1,12 +1,18 @@
 const fs=require("fs");
 function read(resolve,reject)
 {
-    fs.readFile("a.txt","utf-8",(data,err)=>{
-        if(data)
-            return resolve(data);
-        else
-            return reject(err);
-    })
+    // fs.readFile("a.txt","utf-8",(data,err)=>{
+    //     if(data)
+    //         return resolve(data);
+    //     else
+    //         return reject(err);
+    // })
+    let a=5,b=6;
+    // let b=6;
+    if(a>b)
+        return resolve(a);
+    else 
+        return reject(b);
 }
 
 let p=new Promise(read);
