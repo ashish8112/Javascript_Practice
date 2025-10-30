@@ -1,5 +1,8 @@
 //Creating own http server with memory of my device as database .
 // const express = require("express");
+//what is express?
+// Express is built on top of Node.js, which means it leverages Node.js's ability to run JavaScript on the server-side. 
+// This allows developers to use a single language (JavaScript) for both front-end and back-end development.
 import express from "express";
 const app = express();
 
