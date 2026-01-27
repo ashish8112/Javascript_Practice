@@ -1,4 +1,0 @@
-Hello 
-This is Ashish Kr.Shukla
-Note :  give the file name of this directory not the file of folder where 03_readFileUsingHTTp.js is present
-means create  file in  JavaScrpit_Practice folder to access.
