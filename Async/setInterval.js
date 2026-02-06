@@ -9,3 +9,7 @@ function counter(){
     
 }
 stop=setInterval(counter,1000); // will call continously to function counter after each 1sec interval.
+
+
+// The stop variable stores the interval ID returned by setInterval().
+// When clearInterval() is called, JavaScript uses this ID to identify and stop that specific interval execution.
