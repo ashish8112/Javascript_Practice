@@ -53,3 +53,17 @@ function callback(err,data)
     else
         console.log(data);
 }
+
+// Folder Creation
+fs.mkdir("./Ashish",function(err){
+    if(err)console.err(err.message);
+    else
+        console.log("Ashish Folder Created");
+})
+
+//Read Folder 
+
+fs.readdir("./Added",(err,file)=>{
+    if(err)console.err(err.message);
+    else console.log(file);
+})
