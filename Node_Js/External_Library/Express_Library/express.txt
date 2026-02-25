@@ -1,0 +1,26 @@
+const express = require("express");
+const app = express(); //calling express function return object in app
+
+• require("express") → Java ke import jaisa hai.
+• express → Constructor jaisa function hai.
+• express() → Java ke new Express() jaisa hai.
+• app → Object hai jo Express application ko represent karta hai.
+
+🔹 Java Comparison
+
+Java:
+
+import some.package.Express;
+
+Express app = new Express();
+
+Node/Express:
+
+const express = require("express");
+const app = express();
+🔹 Final Understanding
+
+• require = import
+• express() = object creation
+• app = main server object
+• app.get(), app.listen() = object methods
