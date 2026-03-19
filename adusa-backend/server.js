@@ -1,19 +1,28 @@
-const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config();
-
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
 const app = express();
-app.use(express.json());
-
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ MongoDB connected'))
-  .catch((err) => console.error('❌ Connection failed:', err));
-
 const authRoutes = require("./routes/auth");
 
-app.use("/api/auth",authRoutes);
+app.use(express.json());
 
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
+mongoose.connect(process.env.MONGO_URI).then(()=>{  //return promise 
+  console.log("Mongo DB connection established");
+}).catch((err)=>{
+  console.error("error: "+err.message); 
 });
+
+
+
+app.use("/api/auth",authRoutes);  // app.use = saari requests handle karta hai (GET, POST, PUT, DELETE)
+
+app.listen(process.env.PORT,()=>{  
+  console.log(`Server is started at ${process.env.PORT}`);
+});
+
+
+
+// we can server after connecting the db my writing listen code inside then of mongoose.connect so when connection established 
+//then only server will start 
+
+// or write like this we have written here becuase before doing any operation we are writing try and catch in every block 

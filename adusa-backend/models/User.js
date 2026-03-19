@@ -1,8 +1,8 @@
 //This file only defines blueprint (Structure) 
 
-const mongoose = require("mongoose"); // Importing mongoose library
+const mongoose = require("mongoose"); 
 
-const userStructuer={   //Definig Structure
+const userStructuer={  
     name:{
         type: String,
         required: true
@@ -15,6 +15,10 @@ const userStructuer={   //Definig Structure
     password:{
         type: String,
         required : true
+    },
+    bio:{
+        type: String,
+        default : ""
     }
 }
 const userSchema = new mongoose.Schema(userStructuer);// Creating User schema
