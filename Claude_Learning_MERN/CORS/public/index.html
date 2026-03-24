@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>CORS ERROR</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <input type="text" id="a">
+        <input type = "text" id="b">
+        <button onclick="sum()">Calculate</button>
+        <h3 id ="c"></h3>
+    </body>
+    <script>
+        
+        async function sum()
+        {
+            const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+            const response = await axios.post("http://localhost:3000/sum",{
+                'a':a,
+                'b':b
+            });
+            const heading = document.getElementById("c");
+            heading.innerHTML=response.data.sum;
+            console.log(response.data.sum);
+        }
+        </script>
+</html>
