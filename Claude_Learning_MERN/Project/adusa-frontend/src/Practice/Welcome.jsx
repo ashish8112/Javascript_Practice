@@ -29,7 +29,7 @@ function SkillBadge({skill}){
   )
 }
 
-function Welcome()  //or write here export default App
+function Welcome()  //or write here export default Welcome()
 {
   return(
     <div>
