@@ -1,24 +1,19 @@
-import {useState} from 'react';
+import StudentList from "./StudentList";
+import { useState } from "react";
 function App()
 {
-  const students=[
-    {_id:"1",name:"Ashish",branch:"MCA"},
-    {_id:"2",name:"Riya",branch:"CSE"},
-    {_id:"3",name:"Rahul",branch:"ECE"}
-  ];
-
-  return(
+  const [students,setStudents]=useState([{name:"Ashish",branch:"MCA"},{name:"Rahul",branch:"ECE"},{name:"Claude",branch:"All Rounder"}])
+  return (
     <div>
       {
         students.map((student)=>(
-          <div key={student._id}>
-          <h2>{student.name}</h2>
-          <p>{student.branch}</p>
+          <div key={student.name}>
+          <StudentList name = {student.name} branch={student.branch}/>
           </div>
         ))
       }
     </div>
+  
   )
 }
-
 export default App;
