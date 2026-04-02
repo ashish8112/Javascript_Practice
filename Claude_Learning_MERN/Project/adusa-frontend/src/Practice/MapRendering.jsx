@@ -1,4 +1,3 @@
-  import { useState } from "react";
   function MapRendering()
   {
     const students= ["Ashish","Rahul","Manish","Deep"];
