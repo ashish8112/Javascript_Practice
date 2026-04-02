@@ -12,4 +12,4 @@ function ConditionalRendering()
   )
 }
 
-export default ConditionalRenderingonditionalRendering;
+export default ConditionalRendering;
