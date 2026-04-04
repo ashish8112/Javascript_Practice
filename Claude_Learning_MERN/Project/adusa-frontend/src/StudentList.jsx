@@ -6,7 +6,7 @@ function StudentList({name,branch})
 return (
     <div>
         <span>Name {name}, branch {branch} </span>
-        {isFriend?<button>✅ Friend Added</button>:<button onClick={()=>setFriend(true)}>Add Friend</button>}
+        {isFriend?<button> Friend Added</button>:<button onClick={()=>setFriend(true)}>Add Friend</button>}
     </div>
 )
 }
