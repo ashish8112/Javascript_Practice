@@ -22,11 +22,10 @@ const xhr= new XMLHttpRequest();
 xhr.open("GET",url);
 
 //xhr.onreadystatechange → XHR object khud call karta hai, jab bhi readyState change hota hai.
-//Matlab tu bas function assign karta hai, aur XHR engine internally monitor karta hai ki request ka state change hua ya nahi.
+//Matlab hum bas function assign karta hai, aur XHR engine internally monitor karta hai ki request ka state change hua ya nahi.
 //Browser ke JS engine me XHR object ka internal event system hai jo readyState change hone par check karta hai:
 //Agar function assigned hai → call ho jaata hai automatically
-//Tu explicitly call nahi kar raha
-//Isi liye hum bolte hain callback function — kyunki function kab execute hoga, wo decide XHR engine karega, na ki hum.
+//we are not explicitly calling
 xhr.onreadystatechange = function(){    // event handler when the state of xml changes it runs this function.
     if(xhr.readyState===4)
     {
