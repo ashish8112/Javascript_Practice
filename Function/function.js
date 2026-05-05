@@ -1,4 +1,3 @@
-//Note function is also a Object so we can find the length of function 
 // Length is nothing its parameter of the function 
 //Even if check the typeoof function it will display function but at the end of the day function is an object in js 
 function sum (a,b,c)
