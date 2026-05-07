@@ -48,7 +48,6 @@ app.listen(3000,()=>{
 
 
 
-// or 
 // const middleware = session({ secret: 'mySecretKey', resave: false, saveUninitialized: false });
 // middleware is now a function(req, res, next)
 
