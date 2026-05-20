@@ -8,3 +8,4 @@ map.set("Name","Ashish");
 map.set("Age",23);
 console.log(map.get("Name"));
 console.log(map.get("Age"));
+//Special Classes 
