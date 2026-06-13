@@ -1,3 +1,4 @@
+//install cors library 
 const express = require("express");
 const app = express();
 
