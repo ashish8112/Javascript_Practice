@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting</title>
+</head>
+<body>
+    <h1>Chatting Application</h1>
+    <input type="text" id="username" placeholder="Enter you username">
+    <button id="user-name">Save username</button>
+    <br><br>
+    <input type="text" id="msg" placeholder="Enter you message here">
+    <button id="send">Send</button>
+    <div id="message-box">
+    </div>
+     <script src="/socket.io/socket.io.js"></script>
+     <script>
+        const inputEl = document.querySelector("#msg");
+        const userEl = document.querySelector("#username");
+        const messageBox = document.querySelector("#message-box");
+        let username = null;
+        const sendBtn = document.querySelector("#send");
+        sendBtn.addEventListener("click", () => {
+        if (!username) alert("Please Enter your username first");
+        })
+    //const socket = io();//or io("http://localhost:3000") as both are served with app they are at same origin and connected
+    document.querySelector("#user-name").addEventListener("click",()=>{
+        if(!userEl.value)
+        return alert("Please Enter you username first");
+        username= userEl.value;
+        document.querySelector("#user-name").disabled = true  // Disabeled Click
+        userEl.disabled = true  // username change nahi kar saktey ab because it is disabled 
+        const socket = io({auth:{username}})
+    socket.on("onconnection",(msg)=>{
+        console.log(msg); // browser donsole.
+        const p = document.createElement("p");
+        p.innerHTML=msg;
+        messageBox.appendChild(p);
+    })
+    document.querySelector("#send").addEventListener("click", () => { //It send message to Server 
+        if(inputEl.value&&username)
+    {
+        socket.emit("chat",inputEl.value+" from "+username)
+        inputEl.value="";
+    }
+    else{
+        if(!username)
+        alert("Please Enter your username to send message");
+       else{
+        alert("Please Enter you message first");
+       }
+    }
+        
+});
+    socket.on("chat",(msg)=>{ // when we get message on chat point we add in message box 
+        const p = document.createElement("p");
+        p.innerHTML=msg;
+        messageBox.appendChild(p);
+        console.log(socket);
+    })
+    })
+    
+    </script>
+</body>
+</html>
