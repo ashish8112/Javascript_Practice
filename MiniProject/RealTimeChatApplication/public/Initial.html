@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting</title>
+</head>
+<body>
+    <h1>Chatting Application</h1>
+    <input type="text" >
+    <button>Send</button>
+    <div id="message-box">
+    </div>
+     <script src="/socket.io/socket.io.js"></script>
+     <script>
+        const inputEl = document.querySelector("input");
+        const messageBox = document.querySelector("#message-box");
+    //const socket = io();//or io("http://localhost:3000") as both are served with app they are at same origin and connected 
+    const socket = io({auth:{username:"rahul"}})
+    socket.on("onconnection",(msg)=>{
+        console.log(msg); // browser donsole.
+        const p = document.createElement("p");
+        p.innerHTML=msg;
+        messageBox.appendChild(p);
+    })
+    document.querySelector("button").addEventListener("click", () => { //It send message to Server 
+        if(inputEl.value)
+    socket.emit("chat",inputEl.value+" from rahul")
+        inputEl.value=""
+});
+    socket.on("chat",(msg)=>{ // when we get message on chat point we add in message box 
+        const p = document.createElement("p");
+        p.innerHTML=msg
+        messageBox.appendChild(p);
+        console.log(socket);
+    })
+    </script>
+</body>
+</html>
