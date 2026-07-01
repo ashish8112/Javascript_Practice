@@ -11,7 +11,7 @@
     <button >Send</button>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        const socket =  io();
+        const socket =  io(); // client library for frontend or io("origin") // io(https://localhost:3000)
         const input = document.querySelector("input");
     
         document.querySelector("button").addEventListener("click",(e)=>{
