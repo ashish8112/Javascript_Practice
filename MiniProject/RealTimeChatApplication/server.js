@@ -14,7 +14,7 @@ io.on("connection",(socket)=>{ //socket is individual client
     io.emit("onconnection",username+" connected");
 
     socket.on("chat",(msg)=>{ //when we got message from that individual client on chat server
-    socket.broadcast.emit("chat",msg) //now send this msg to every connect client of this server including sender.
+    socket.broadcast.emit("chat",msg) //now send this msg to every connect client except sender.
     })
     socket.on("disconnect",()=>{
         socket.broadcast.emit("onconnection",username+" disconnected"); // only to another client not to sender 
