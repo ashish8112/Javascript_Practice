@@ -1,0 +1,85 @@
+.container1{
+    box-sizing:border-box;
+    border:2px solid red;
+    height: 400px;
+    display: flex;
+    flex-direction:row; /*It is default of flex-direction so although we don't write it , it wll act as row order */
+    flex-wrap:wrap; /*if we don't use wrap property  element of boxs will be shrinked as we have seen in flex-direction */
+    width: 600px;
+}
+.container2{
+    box-sizing:border-box;
+    border:2px solid red;
+    height: 400px;
+    display: flex;
+    flex-direction:row; /*It is default of flex-direction so although we don't write it , it wll act as row order */
+    flex-wrap:wrap-reverse;
+    width: 600px;
+}
+.container3{
+    box-sizing:border-box;
+    border:2px solid blue;
+    height: 400px;
+    display: flex;
+    flex-direction:row-reverse; 
+    flex-wrap:wrap;
+    width: 600px;
+}
+.container4{
+    box-sizing:border-box;
+    border:2px solid blue;
+    height: 400px;
+    display: flex;
+    flex-direction:row-reverse; 
+    flex-wrap:wrap-reverse;
+    width: 600px;
+}
+.container5{
+    box-sizing:border-box;
+    border:2px solid blueviolet;
+    height: 400px;
+    display: flex;
+    flex-direction:column; 
+    flex-wrap:wrap;
+    width: 600px;
+}
+.container6{
+    box-sizing:border-box;
+    border:2px solid blueviolet;
+    height: 400px;
+    display: flex;
+    flex-direction:column; 
+    flex-wrap:wrap-reverse;
+    width: 600px;
+}
+.container7{
+    box-sizing:border-box;
+    border:2px solid black;
+    height: 400px;
+    display: flex;
+    flex-direction:column-reverse; 
+    flex-wrap:wrap;
+    width: 600px;
+}
+.container8{
+    box-sizing:border-box;
+    border:2px solid black;
+    height: 400px;
+    display: flex;
+    flex-direction:column-reverse; 
+    flex-wrap:wrap-reverse;
+    width: 600px;
+}
+.container1 div,.container2 div,.container3 div,.container4 div,.container5 div,.container6 div,.container7 div,.container8 div{
+    height: 100px;
+    width: 100px;
+    border:2px solid black;
+    box-sizing: border-box;
+}
+
+.header{
+    font-size:2rem;
+    font-weight: bolder;
+    text-align: center;
+    color:purple;
+}

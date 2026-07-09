@@ -1,0 +1,22 @@
+.container{
+    height: 400px;
+    width: 600px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    display:flex;
+    flex-flow:row wrap;
+    align-content:flex-start;
+    /* align-content:center; */
+    /* align-content: flex-end; */
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    /* align-content:space-evenly; */
+    /* Apply One by One to check  */
+
+}
+.container>div{
+    height: 100px;
+    width: 100px;
+    border:2px solid black;
+    box-sizing: border-box;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Translate</title>
+        <style>
+            .square{
+                height: 150px;
+                width: 150px;
+                border:2px solid black;
+                border-top: 20px solid red;
+                background-color: blue;
+                border-radius: 5px;
+                margin:30px 20px;
+                /* margin: auto; */
+                /* margin-top: 250px; */
+                animation: box 5s linear alternate infinite;
+
+            }
+            @keyframes box {
+                
+                to{
+                    transform:  translate(800px,0px) rotate(360deg);
+                    /* transform: rotate(360deg) translate(400px,0px); */
+
+                }
+                
+            }
+           
+            </style>
+    </head>
+    <body>
+        <div class="square">
+        </div>
+    </body>
+</html>

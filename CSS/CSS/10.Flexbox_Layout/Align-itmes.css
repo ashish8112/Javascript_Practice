@@ -1,0 +1,63 @@
+h1{
+    text-align:center;
+    color:Red;
+}
+.header{
+    text-align : center;
+    color:purple;
+    font-size:1.5rem;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.flex-start{
+    border:2px solid black;
+    height: 300px;
+    width: 600px;
+    display:flex;
+    align-items: flex-start;
+}
+.center{
+    border:2px solid black;
+    height: 300px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+}
+.flex-end{
+    border:2px solid black;
+    height: 300px;
+    width: 600px;
+    display: flex;
+    align-items: flex-end;
+}
+.stretch{
+    border:2px solid black;
+    height: 300px;
+    width: 600px;
+    display: flex;
+    align-items: stretch;
+}
+.box1,.box2,.box3,.box4{
+    border:2px solid blue;
+    box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+
+}
+.center_div{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid dodgerblue;
+    box-sizing: border-box;
+    height: 300px;
+    width: 600px;
+}
+.center_div>div{
+    border:2px solid green;
+    margin-right: 10px;
+    height: 100px;
+    width: 100px;
+    box-sizing: border-box;
+    background: linear-gradient(to top right,red,green,blue) center;
+}

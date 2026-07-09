@@ -1,0 +1,71 @@
+*{
+    padding:0px;
+    margin:0px;
+    color:white;
+    text-decoration:none;
+}
+#nav{
+    height: 60px;
+    background-color: #0f1111;
+  
+}
+#logo{
+    font-size:25px;
+    color:#f08804;
+    text-decoration:none;
+}
+#acc{
+    margin-left:200px;
+}
+#contact{
+    margin-left:200px;
+}
+#cart{
+    margin-left:200px;
+}
+input{
+    margin-left:200px;
+    color:black;
+    padding-left:2px;
+}
+button{
+    background-color: #f08804;
+}
+main{
+    height:429px;
+    padding-left:400px;
+    padding-top:180px;
+    background-color: #697565;
+}
+div{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin-right:100px;
+    padding:50px;
+    border:2px solid black;
+    text-align: center;
+}
+footer{
+    background-color: grey;
+    height:42px;
+    color:#0f1111;
+    /* padding-left: 600px; */ 
+    text-align: center;
+    font-weight: bolder;
+    padding-top:18px;
+}
+#a{
+    background-color: rgba(255,0,0,0.5);
+}
+#b{
+    background-color: rgba(0,255,0,0.5);
+}
+#c{
+    background-color: rgba(0,0,255,0.5);
+}
+p{
+    color:#0f1111;
+    font-weight: bolder;
+    /* padding-left:110px; */
+}

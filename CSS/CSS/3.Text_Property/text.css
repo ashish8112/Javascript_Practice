@@ -1,0 +1,39 @@
+pre{
+    text-align:left;
+    font-size:x-large;
+}
+h1{
+    text-align:center;
+    text-decoration: dotted blue underline;
+
+}
+aside{
+      font-size:x-large;
+      text-decoration:overline underline;
+}
+a{
+    text-decoration:none;
+    font-size:large;
+}
+#p1{
+    font-weight:lighter;
+}
+#p2{
+    font-weight:100;
+}
+#p3{
+    font-weight:bold;
+}
+#p4{
+    font-weight: 600;
+}
+#p5{
+    font-weight: bolder;
+}
+#p6{
+    font-weight: 900;
+}
+
+#p1,#p2,#p3,#p4,#p5,#p6{
+    font-size:large;
+}

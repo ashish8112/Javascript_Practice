@@ -1,0 +1,43 @@
+div{
+    height: 100px;
+    width: 100px;
+    border:2px solid black;
+    display:inline-block;
+}
+#box1{
+    background-color: rgba(255,0,0,1);
+    position:static;
+}
+#box2{
+    background-color: rgba(0,255,0,1);
+    position: relative;
+    top:10px;
+}
+#box3{
+    background-color: rgba(0,0,255,1);
+    position:absolute;
+    right:50px;   
+}
+#box4{
+    background-color:black;
+    color:white;
+    position: fixed;
+    bottom:150px; 
+    /* AS we can see how much we hover entire the browser it is fixed at the given location */
+}
+
+#box5{
+    background-color: brown;
+    position: sticky;
+    top:0px;
+    left:600px;
+    /* Read Box 6 css property */
+}
+#box6{
+    background-color: purple;
+    position:sticky;
+    top:0px;
+    left:100px;
+    /* We can see it is not visible before going to its location with scrolling but whenever we reached to its location
+    no matter how much we scroll it sticks with its postions in scrolling */
+}

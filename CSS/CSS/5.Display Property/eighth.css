@@ -1,0 +1,17 @@
+#parent{
+    border:5px solid black;
+    margin-top:200px;
+}
+
+div{
+    display:inline;
+}
+
+/* In output our parent div is also acting like inline not 
+covering entire width becuase we have stated the default 
+display for div is inline and there is not dispaly
+property stated in parent div so it will style the parent div 
+as well as div(element) display property 
+to fix this add. 
+display:block; in parent div.
+*/

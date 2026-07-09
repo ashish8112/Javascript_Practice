@@ -1,0 +1,20 @@
+#zero{
+    color:darkgreen
+}
+
+
+#one{
+    font-family:serif;
+    font-size:10px;
+    color:purple;
+}
+#two{
+    font-family:arial;
+    font-size:15px;
+    color:blue;
+}
+#three{
+    font-family:cursive;
+    font-size:20px;
+    color:chartreuse;
+}

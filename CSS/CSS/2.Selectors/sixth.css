@@ -1,0 +1,15 @@
+#headingOne{
+    color:red;
+}
+#headingTwo{
+    color:purple;
+}
+h1{
+    color:green;
+}
+/* Below one is for class Selector */
+.myclass
+{
+    color:blue;
+    font-size: x-large;
+}

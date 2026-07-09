@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Keyframe Rules </title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            body{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            div{
+                height: 150px;
+                width: 150px;
+                border-radius: 50%;
+                background-color: yellow;
+                animation-name: circle;
+                animation-duration: 5s;
+            }
+            @keyframes circle {
+                from{
+                    background-color: purple;
+                }
+                to{
+                    background-color: red;
+                }
+                
+            }
+            </style>
+    </head>
+    <body>
+        <div>
+        </div>
+    </body>
+</html>

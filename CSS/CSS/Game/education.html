@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dual Player Number Challenge</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .toss-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    .game-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+      display: none; 
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+    .player-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-align: center;
+      background: #fafafa;
+    }
+    .player-section.active-player {
+      border-color: #4caf50;
+      background: #f0fff0;
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.1);
+    }
+    .player-section h2 {
+      margin-top: 0;
+    }
+    .hint-message {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+      min-height: 1.2em;
+    }
+    .chances {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+    .dare-section {
+      display: none;
+      padding: 20px;
+      background: linear-gradient(135deg, #fffde7, #fff9c4);
+      border: 2px solid #ffeb3b;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    .center-dare {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+    }
+    .end-buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 10px;
+      border: none;
+      background-color: #4caf50;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #43a047;
+    }
+    input[type="number"] {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 70px;
+      margin-right: 10px;
+      text-align: center;
+    }
+    #message {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toss-container" id="toss-container">
+    <h1>Welcome to the Number Duel!</h1>
+    <p>Press the button below to toss a coin and decide who will guess first.</p>
+    <button onclick="tossCoin()">Toss Coin</button>
+  </div>
+
+  <div class="game-container" id="game-container">
+    <h1>🔢 Number Duel 🔢</h1>
+
+    <div class="player-section" id="player1">
+      <h2 style="color: #4caf50;">Player 1</h2>
+      <input type="number" id="guess1" min="1" max="20" placeholder="1-20" />
+      <button onclick="checkGuess(1)">Submit Guess</button>
+      <p class="hint-message" id="hint1"></p>
+      <div class="chances" id="hearts1">
+        ❤️ ❤️ ❤️
+      </div>
+    </div>
+
+    <div class="player-section" id="player2">
+      <h2 style="color: #2196f3;">Player 2</h2>
+      <input type="number" id="guess2" min="1" max="20" placeholder="1-20" />
+      <button onclick="checkGuess(2)">Submit Guess</button>
+      <p class="hint-message" id="hint2"></p>
+      <div class="chances" id="hearts2">
+        ❤️ ❤️ ❤️
+      </div>
+    </div>
+
+    <div id="message">Waiting for toss...</div>
+  </div>
+
+  <div class="dare-section" id="dare-section">
+    <h2>Congratulations!</h2>
+    <p id="dare-message" style="font-weight: bold; margin: 15px 0;"></p>
+    <div class="end-buttons">
+      <button onclick="rematchGame()">Rematch</button>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+  </div>
+
+  <script>
+    let targetNumber, currentPlayer = 1, chances = [3, 3], lastGuess = null;
+    const messageElement = document.getElementById('message');
+    const hint1Element = document.getElementById('hint1');
+    const hint2Element = document.getElementById('hint2');
+    const gameContainer = document.getElementById('game-container');
+    const tossContainer = document.getElementById('toss-container');
+    const dareBox = document.getElementById('dare-section');
+    let dares = [
+      "Blindfold me and seduce me!",
+      "Sex Wrestling!",
+      "Do a blowjob until cum or lick until orgasm!",
+      "Tie your partner up and tease them for 30 seconds!",
+      "Lick and suck my toes!",
+      "Suck his/her boobs!",
+      "Touch your favourite body part!",
+      "Make him or her fully aroused and leave!",
+      "Masturbate for 5 minutes and don't let your partner touch you!",
+      "Grab your partner's throat and maintain eye contact for 30 seconds!"
+    ];
+
+    function tossCoin() {
+      currentPlayer = Math.random() < 0.5 ? 1 : 2;
+      messageElement.textContent = `Player ${currentPlayer} will start!`;
+      initializeGame();
+      tossContainer.style.display = 'none';
+      gameContainer.style.display = 'block';
+    }
+
+    function initializeGame() {
+      targetNumber = Math.floor(Math.random() * 20) + 1;
+      chances = [3, 3];
+      lastGuess = null;
+      hint1Element.textContent = "";
+      hint2Element.textContent = "";
+      messageElement.textContent = `Player ${currentPlayer}'s turn!`;
+      document.getElementById('player1').style.display = 'block';
+      document.getElementById('player2').style.display = 'block';
+      dareBox.style.display = 'none';
+      dareBox.classList.remove('center-dare');
+      updateChancesDisplay();
+      if (currentPlayer === 1) {
+        document.getElementById('player1').classList.add('active-player');
+        document.getElementById('player2').classList.remove('active-player');
+      } else {
+        document.getElementById('player2').classList.add('active-player');
+        document.getElementById('player1').classList.remove('active-player');
+      }
+      document.getElementById('guess1').value = "";
+      document.getElementById('guess2').value = "";
+      dares.sort(() => Math.random() - 0.5);
+    }
+
+    function updateChancesDisplay() {
+      [1, 2].forEach(player => {
+        const heartsElement = document.getElementById(`hearts${player}`);
+        heartsElement.innerHTML = '❤️ '.repeat(chances[player - 1]) + '🖤 '.repeat(3 - chances[player - 1]);
+      });
+    }
+
+    function checkGuess(player) {
+      if (player !== currentPlayer) return;
+      
+      const guessInput = document.getElementById(`guess${player}`);
+      const guess = parseInt(guessInput.value);
+      if (isNaN(guess) || guess < 1 || guess > 20) return;
+      
+      lastGuess = guess;
+      chances[player - 1]--;
+      updateChancesDisplay();
+      
+      let hint = guess < targetNumber ? "📈 Go higher!" : "📉 Go lower!";
+      
+      document.getElementById(`hint${player}`).textContent = hint;
+      
+      if (guess === targetNumber) {
+        winGame(player);
+        return;
+      }
+      
+      if (chances[player - 1] === 0) {
+        let otherPlayer = (currentPlayer === 1) ? 2 : 1;
+        if (chances[otherPlayer - 1] > 0) {
+          currentPlayer = otherPlayer;
+          messageElement.textContent = `Player ${currentPlayer}'s turn! Last guess was ${lastGuess} (${hint})`;
+          document.getElementById(`player${currentPlayer}`).classList.add('active-player');
+          document.getElementById(`player${player}`).classList.remove('active-player');
+        } else {
+          endGame(`😞 Both players lost! The number was ${targetNumber}`);
+        }
+      } else {
+        messageElement.textContent = hint;
+      }
+      guessInput.value = "";
+    }
+
+    function winGame(player) {
+      messageElement.textContent = `🎉 Player ${player} wins!`;
+      document.getElementById('player1').style.display = 'none';
+      document.getElementById('player2').style.display = 'none';
+      messageElement.style.display = 'none';
+      
+      const randomDare = dares[Math.floor(Math.random() * dares.length)];
+      document.getElementById('dare-message').textContent = `Your Dare: ${randomDare}`;
+      
+      dareBox.style.display = 'block';
+      dareBox.classList.add('center-dare');
+    }
+
+    function endGame(finalMessage) {
+      messageElement.textContent = finalMessage;
+      document.getElementById('player1').classList.remove('active-player');
+      document.getElementById('player2').classList.remove('active-player');
+    }
+
+    function rematchGame() {
+      showToss();
+    }
+
+    function restartGame() {
+      showToss();
+    }
+
+    function showToss() {
+      gameContainer.style.display = 'none';
+      dareBox.style.display = 'none';
+      tossContainer.style.display = 'block';
+      messageElement.style.display = 'block';
+    }
+
+  </script>
+</body>
+</html>

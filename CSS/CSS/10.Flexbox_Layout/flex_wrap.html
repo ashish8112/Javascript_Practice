@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex-wrap property</title>
+        <link rel="stylesheet" href="flex_wrap.css">
+    </head>
+    <body>
+        <section class="row">
+            <header class="header">flex-wrap property for flex-direction : row </header>
+
+            <h1>Wrap with main axis (left to right) and flex-wrap : wrap (top to bottom)</h1>
+            <p><b>Note: </b>As we know our flex-direction: row (Default) so wrapping is occuring <b>around main axis(which is a row)</b> so insted of shrinking boxs are wrapping in row order , so that it can fit their height and width inside container without being overflow.
+            </p>
+
+            <p>In simple words just understand flex-wrap:wrap; property given so  wrapping is occuring <b>over cross - axis (top to bottom)</b></p>
+            <!-- Flex-direction: row;
+             Flex-wrap: wrap; -->
+            <div class="container1">
+                <div class="box1">box1</div>
+                <div class="box2">box2</div>
+                <div class="box3">box3</div>
+                <div class="box4">box4</div>
+                <div class="box5">box5</div>
+                <div class="box6">box6</div>
+                <div class="box7">box7</div>
+                <div class="box8">box8</div>
+            </div>
+
+            
+
+            <h1>Wrap-reverse  with main axis (left to right ) and flex-wrap : wrap-reverse (bottom to top)
+            </h1>
+            <p><b>Note: </b>Due to <b>flex-wrap: wrap-reverse</b> elements are starting in<b> row order from (bottom to top) </b>
+
+            <p>In simple words just understand flex-wrap:wrap-reverse; property given so  wrapping is occuring <b>over cross - axis but in reverse manner becuase of wrap-reverse (bottom to top)</b></p>
+            
+                <!--Flex-driection : row 
+                Flex-wrap:wrap-reverse; -->
+            <div class="container2">
+                <div class="box1">box1</div>
+                <div class="box2">box2</div>
+                <div class="box3">box3</div>
+                <div class="box4">box4</div>
+                <div class="box5">box5</div>
+                <div class="box6">box6</div>
+                <div class="box7">box7</div>
+                <div class="box8">box8</div>
+            </div>
+
+        </section>
+
+        <br><hr><hr>
+
+        <section class="row-reverse">
+            <header class="header">flex-wrap property for flex-direction: row-reverse </header> 
+
+            <h1>Wrap with main axis but inverted(right to left) flex-direction : row-reverse and flex-wrap : wrap (top to bottom)</h1>
+            <p><b>Note: </b>We can see wraping in <b>row-reverse order </b> </p>
+
+            <p>In simple words just understand flex-wrap:wrap; property given so  wrapping is occuring <b>over cross - axis (top to bottom)</b></p>
+            <!-- Flex-direction: row-reverse; 
+                 Flex-wrap: wrap-->
+            <div class="container3">
+                <div class="box1">box1</div>
+                <div class="box2">box2</div>
+                <div class="box3">box3</div>
+                <div class="box4">box4</div>
+                <div class="box5">box5</div>
+                <div class="box6">box6</div>
+                <div class="box7">box7</div>
+                <div class="box8">box8</div>
+            </div>
+
+            <h1>Wrap reverse with main axis but inverted(right to left) flex-direction : row-reverse and flex-wrap : wrap-reverse (bottom to top) </h1>
+            <p><b>Note: </b> We can see wrapping in <b> row-reverse order </b> but down to top because of <b>flex-warp:wrap-reverse </b></p>
+
+            <p>In simple words just understand flex-wrap:wrap-reverse; property given so  wrapping is occuring <b>over cross - axis but in reverse manner becuase of wrap-reverse (bottom to top)</b></p>
+            <!-- Flex-direction : row-reverse 
+                 Flex-wrap : wrap-reverse -->
+            <div class="container4">
+                <div class="box1">box1</div>
+                <div class="box2">box2</div>
+                <div class="box3">box3</div>
+                <div class="box4">box4</div>
+                <div class="box5">box5</div>
+                <div class="box6">box6</div>
+                <div class="box7">box7</div>
+                <div class="box8">box8</div>
+            </div>
+
+        </section> 
+           
+        <br><hr><hr>
+
+        <section class="column">
+        <header class="header">flex-wrap property for flex-direction : column</header>
+
+        <h1>Wrap with cross-axis (or converting cross-axis into main axis with flex-direction : column) (top to bottom) and flex-wrap : wrap (left to right)</h1>
+        <p><b>Note: </b> We can see wrapping in <b> column order</b> becuase due to <b>flex direction:column </b> wrapping is occuring from top to bottom in several columns as we have use <b>flex-wrap:wrap</b> </p>
+
+        <p>In simple words just understand flex-wrap:wrap; property given so  wrapping is occuring <b>over cross - axis (left to right) </b> becuase 
+        due to <b>flex-direction : column </b> verticall line apperaing like main-axis <b>so for column direction cross-axis is left to right</b></p>
+
+        
+
+        <!-- flex-direction : column ;
+             flex-wrap : wrap ;-->
+
+             <div class="container5">
+                <div class="box1">box1</div>
+                <div class="box2">box2</div>
+                <div class="box3">box3</div>
+                <div class="box4">box4</div>
+                <div class="box5">box5</div>
+                <div class="box6">box6</div>
+                <div class="box7">box7</div>
+                <div class="box8">box8</div>
+             </div>
+       
+
+            <h1>Wrap with cross-axis(or converting cross-axis into main axis with flex-direction: column) (top to bottom) and flex-wrap : wrap-reverse (right to left)</h1>
+            <p>In simple words wrapping will occur around cross-axis which is a horizontal line becuase of (flex-direction:column) but due to <b>flex-wrap:reverse </b> wrapping will occur from <b>right to left</b> </p>
+
+            <div class="container6">
+                <div class="box1">box1</div>
+                <div class="box2">box2</div>
+                <div class="box3">box3</div>
+                <div class="box4">box4</div>
+                <div class="box5">box5</div>
+                <div class="box6">box6</div>
+                <div class="box7">box7</div>
+                <div class="box8">box8</div>
+             </div>
+
+        
+    
+        </section>
+        <br><hr><hr>
+
+        <section class="column-reverse">
+    
+        <header class="header">flex-wrap property for flex-direction : column-reverse</header>
+        <h1>Wrap with cross-axis(or converting cross-axis into main axis with flex-direction: column-reverse) (bottom to top) and flex-wrap : wrap (left-right)</h1>
+        <p>In simple words elements will placed according to column-reverse means <b>down to top </b> and <b>wrapping will ocurr in (left to right) </b> becuase of <b>flex-warp:wrap </b> which always render on cross-axis and for column direction <b>cross-axis is left to right </b></p>
+
+        <div class="container7">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+            <div class="box5">box5</div>
+            <div class="box6">box6</div>
+            <div class="box7">box7</div>
+            <div class="box8">box8</div>
+         </div>
+
+
+         <h1>Wrap-reverse with cross-axis(or converting cross-axis into main axis with flex-direction: column-reverse) (bottom to top) and flex-wrap: wrap-reverse (right to left) </h1>
+         <p>In simple words elements will placed according to column-reverse means <b>down to top </b> and <b>wrapping will ocurr in (right to left) </b> becuase of <b>flex-warp:wrap-reverse </b> which always render on cross-axis and for column direction <b>cross-axis is left to right but because of wrap-reverse it will place the item form right to left </b></p>
+
+         <div class="container8">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+            <div class="box5">box5</div>
+            <div class="box6">box6</div>
+            <div class="box7">box7</div>
+            <div class="box8">box8</div>
+         </div>
+
+
+
+        </section>
+        
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transform</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing:border-box;
+            }
+            .square{
+                height: 150px;
+                width: 150px;
+                border:2px solid black;
+                background-color: blue;
+                border-radius: 5px;
+                margin:auto;
+                position: relative;
+                top:200px;
+                transition:all 2s linear ;
+                
+
+            }
+            .square:hover{
+                transform:skew(20deg,30deg);
+            }
+            .square2{
+                height: 150px;
+                width: 150px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border:2px solid black;
+                background-color: blue;
+                border-radius: 5%;
+                margin:auto;
+                margin-top:20px;
+                position: relative;
+                top:200px;
+                transition:all 2s linear ;
+                
+
+            }
+            .square2:hover{
+                transform:skew(-20deg,-30deg);
+            }
+            p{
+                font-size:1rem;
+                color:white;
+            }
+           
+
+            </style>
+    </head>
+    <body>
+        <div class="square">
+        </div>
+        <div class="square2">
+            <p>Ashish!</p>
+        </div>
+    </body>
+</html>

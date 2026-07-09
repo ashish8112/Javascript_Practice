@@ -1,0 +1,57 @@
+.container1{
+    height:  200px;
+    border:2px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.container2{
+    height:  200px;
+    border:2px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.container3{
+    height:  200px;
+    border:2px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* As we can see the boxes are shrink but didn't overflow from the container
+    it is becuase of flex property that allows to boxs to shrink their hieght and widht
+    till the font-size of boxs allowed it  */
+}
+
+.container4{
+    height:  200px;
+    border:2px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction:column-reverse;
+}
+
+.container1>div,.container2>div,.container3>div,.container4>div{
+    box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+    border: 2px solid green;
+}
+.container1 .box1,.container2 .box,.container3 .box1,.container4 .box1{
+    background-color: grey;
+}
+.container1 .box2,.container2 .box2,.container3 .box2,.container4 .box2{
+    background-color:rgba(255,255,0,0.4);
+}
+.container1 .box3,.container2 .box3,.container3 .box3,.container4 .box3{
+    background-color: pink;
+}
+.container1 .box4,.container2 .box4, .container3 .box4,.container4 .box4{
+    background-color: aqua;
+}

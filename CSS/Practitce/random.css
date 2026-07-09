@@ -1,0 +1,52 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: purple;
+    margin-top: 20px;
+}
+
+/* Container styles */
+.container {
+    display: flex; /* Enable Flexbox */
+    flex-wrap: wrap; /* Allow wrapping */
+    border: 2px solid black;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+}
+
+/* Box styles */
+.box {
+    border: 2px solid blue;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    background-color: steelblue;
+    display: flex; /* Center text inside box */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Flex-basis variations */
+.box1 {
+    flex-basis: 30%; /* Takes 30% of the container width */
+}
+
+.box2 {
+    flex-basis: 50%; /* Takes 50% of the container width */
+}
+
+.box3 {
+    flex-basis: 20%; /* Takes 20% of the container width */
+}
+
+.box4 {
+    flex-basis: auto; /* Auto size based on content */
+}

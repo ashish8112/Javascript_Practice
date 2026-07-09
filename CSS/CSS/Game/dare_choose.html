@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dual Player Number Challenge</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Toss container styling */
+    .toss-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    /* Main game container */
+    .game-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+      display: none; /* Hidden until toss is done */
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+    .player-section {
+      margin: 20px 0;
+      padding: 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-align: center;
+      background: #fafafa;
+      position: relative;
+    }
+    .player-section.active-player {
+      border-color: #4caf50;
+      background: #f0fff0;
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.1);
+    }
+    .player-section h2 {
+      margin-top: 0;
+    }
+    .hint-message {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
+      min-height: 1.2em;
+    }
+    .chances {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+    .dare-section {
+      display: none;
+      padding: 20px;
+      background: linear-gradient(135deg, #fffde7, #fff9c4);
+      border: 2px solid #ffeb3b;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    /* Center the dare box when game is won */
+    .center-dare {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+    }
+    /* Additional buttons for rematch/restart */
+    .end-buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 10px;
+      border: none;
+      background-color: #4caf50;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #43a047;
+    }
+    input[type="number"] {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 70px;
+      margin-right: 10px;
+      text-align: center;
+    }
+    #message {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toss Container -->
+  <div class="toss-container" id="toss-container">
+    <h1>Welcome to the Number Duel!</h1>
+    <p>Press the button below to toss a coin and decide who will guess first.</p>
+    <button onclick="tossCoin()">Toss Coin</button>
+  </div>
+
+  <!-- Main Game Container -->
+  <div class="game-container" id="game-container">
+    <h1>🔢 Number Duel 🔢</h1>
+
+    <div class="player-section" id="player1">
+      <h2 style="color: #4caf50;">Player 1</h2>
+      <input type="number" id="guess1" min="1" max="20" placeholder="1-20" />
+      <button onclick="checkGuess(1)">Submit Guess</button>
+      <p class="hint-message" id="hint1"></p>
+      <div class="chances" id="hearts1">
+        ❤️ ❤️ ❤️
+      </div>
+    </div>
+
+    <div class="player-section" id="player2">
+      <h2 style="color: #2196f3;">Player 2</h2>
+      <input type="number" id="guess2" min="1" max="20" placeholder="1-20" />
+      <button onclick="checkGuess(2)">Submit Guess</button>
+      <p class="hint-message" id="hint2"></p>
+      <div class="chances" id="hearts2">
+        ❤️ ❤️ ❤️
+      </div>
+    </div>
+
+    <div id="message">Waiting for toss...</div>
+  </div>
+
+  <!-- Dare Section (appears when someone wins) -->
+  <div class="dare-section" id="dare-section">
+    <h2>Congratulations! Now, choose a dare!</h2>
+    <p>Pick a number between 1-10:</p>
+    <input type="number" id="dare-choice" min="1" max="10" placeholder="1-10" />
+    <button onclick="assignDare()">Get Dare</button>
+    <p id="dare-message" style="margin-top: 10px; font-weight: bold;"></p>
+    <div class="end-buttons">
+      <button onclick="rematchGame()">Rematch</button>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+  </div>
+
+  <script>
+    let targetNumber, currentPlayer = 1, chances = [3, 3], lastGuess = null;
+    const messageElement = document.getElementById('message');
+    const hint1Element = document.getElementById('hint1');
+    const hint2Element = document.getElementById('hint2');
+    const gameContainer = document.getElementById('game-container');
+    const tossContainer = document.getElementById('toss-container');
+    const dareBox = document.getElementById('dare-section');
+    let dares = [
+      "Blindfold me and seduce me!",
+      "Sex Wrestling!",
+      "Do a blowjob until cum or lick until orgasm!",
+      "Tie your partner up and tease them for 30 seconds!",
+      "Lick and suck my toes!",
+      "Spin around 10 times and walk straight!",
+      "Lick my ass and my asshole!",
+      "Make him or her fully aroused and leave!",
+      "Masturbate for 5 minutes and don't let your partner touch you!",
+      "Grab your partner's throat and maintain eye contact for 30 seconds!"
+    ];
+
+    // Toss the coin to decide who starts
+    function tossCoin() {
+      // Randomly choose 1 or 2
+      currentPlayer = Math.random() < 0.5 ? 1 : 2;
+      // Set the starting message accordingly
+      messageElement.textContent = `Player ${currentPlayer} will start!`;
+      // Initialize the game and show game container; hide toss container.
+      initializeGame();
+      tossContainer.style.display = 'none';
+      gameContainer.style.display = 'block';
+    }
+
+    function initializeGame() {
+      targetNumber = Math.floor(Math.random() * 20) + 1;
+      chances = [3, 3];
+      lastGuess = null;
+      // Reset hints and messages
+      hint1Element.textContent = "";
+      hint2Element.textContent = "";
+      messageElement.textContent = `Player ${currentPlayer}'s turn!`;
+      // Ensure player sections are visible
+      document.getElementById('player1').style.display = 'block';
+      document.getElementById('player2').style.display = 'block';
+      // Hide dare section and remove centering if present
+      dareBox.style.display = 'none';
+      dareBox.classList.remove('center-dare');
+      // Reset hearts display
+      updateChancesDisplay();
+      // Set active player styling based on toss result
+      if (currentPlayer === 1) {
+        document.getElementById('player1').classList.add('active-player');
+        document.getElementById('player2').classList.remove('active-player');
+      } else {
+        document.getElementById('player2').classList.add('active-player');
+        document.getElementById('player1').classList.remove('active-player');
+      }
+      // Clear guess inputs
+      document.getElementById('guess1').value = "";
+      document.getElementById('guess2').value = "";
+      // Shuffle dares for variety
+      dares.sort(() => Math.random() - 0.5);
+    }
+
+    function updateChancesDisplay() {
+      [1, 2].forEach(player => {
+        const heartsElement = document.getElementById(`hearts${player}`);
+        heartsElement.innerHTML = '❤️ '.repeat(chances[player - 1]) + '🖤 '.repeat(3 - chances[player - 1]);
+      });
+    }
+
+    function checkGuess(player) {
+      // Only allow guess if it is the current player's turn
+      if (player !== currentPlayer) return;
+      
+      const guessInput = document.getElementById(`guess${player}`);
+      const guess = parseInt(guessInput.value);
+      if (isNaN(guess) || guess < 1 || guess > 20) return;
+      
+      lastGuess = guess;
+      chances[player - 1]--;
+      updateChancesDisplay();
+      
+      let hint = guess < targetNumber ? "📈 Go higher!" : "📉 Go lower!";
+      
+      // Display hint in the player's box
+      document.getElementById(`hint${player}`).textContent = hint;
+      
+      if (guess === targetNumber) {
+        // Win condition: show only the dare box centered
+        winGame(player);
+        return;
+      }
+      
+      // If current player runs out of chances, check if the other player still has chances
+      if (chances[player - 1] === 0) {
+        let otherPlayer = (currentPlayer === 1) ? 2 : 1;
+        if (chances[otherPlayer - 1] > 0) {
+          // Switch turn to the other player
+          currentPlayer = otherPlayer;
+          messageElement.textContent = `Player ${currentPlayer}'s turn! Last guess was ${lastGuess} (${hint})`;
+          // Update active player styling
+          document.getElementById(`player${currentPlayer}`).classList.add('active-player');
+          document.getElementById(`player${player}`).classList.remove('active-player');
+        } else {
+          endGame(`😞 Both players lost! The number was ${targetNumber}`);
+        }
+      } else {
+        // If the current player still has chances, keep the turn and update message
+        messageElement.textContent = hint;
+      }
+      guessInput.value = "";
+    }
+
+    function winGame(player) {
+      messageElement.textContent = `🎉 Player ${player} wins!`;
+      // Hide player sections and game message
+      document.getElementById('player1').style.display = 'none';
+      document.getElementById('player2').style.display = 'none';
+      messageElement.style.display = 'none';
+      
+      // Show and center the dare box
+      dareBox.style.display = 'block';
+      dareBox.classList.add('center-dare');
+    }
+
+    function endGame(finalMessage) {
+      messageElement.textContent = finalMessage;
+      document.getElementById('player1').classList.remove('active-player');
+      document.getElementById('player2').classList.remove('active-player');
+    }
+
+    function assignDare() {
+      const choice = parseInt(document.getElementById('dare-choice').value);
+      if (choice >= 1 && choice <= 10) {
+        document.getElementById('dare-message').textContent = `Dare: ${dares[choice - 1]}`;
+      }
+    }
+
+    // Rematch and Restart both return to the toss phase
+    function rematchGame() {
+      showToss();
+    }
+
+    function restartGame() {
+      showToss();
+    }
+
+    function showToss() {
+      // Hide game and dare box, show toss container
+      gameContainer.style.display = 'none';
+      dareBox.style.display = 'none';
+      tossContainer.style.display = 'block';
+      // Reset displays for future games
+      messageElement.style.display = 'block';
+    }
+
+    // Start with the toss container visible
+    // (Game container will be shown after tossCoin() is called)
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#first{
+    border:solid purple;
+    padding-left:50px;
+}
+#second{
+    border:solid black;
+    margin-left:50px;
+}
+#third{
+    border:solid green;
+    padding-left:50px;
+    margin-left:50px;
+}

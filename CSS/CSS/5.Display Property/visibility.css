@@ -1,0 +1,25 @@
+div{
+    height: 85px;
+    width: 150px;
+    display: inline-block;
+    margin-top:250px;
+    margin-left:70x;
+    border:2px solid black;
+    text-align: center;
+    color:black;
+    padding-top:65px;
+}
+#box1{
+    background-color: rgba(255,0,0,0.4);
+}
+#box2{
+    background-color: rgba(0,255,0,0.4);
+    display: none;
+}
+#box3{
+    background-color: rgba(0,0,255,0.4);
+    visibility: hidden;
+}
+#box4{
+    background-color: grey;
+}

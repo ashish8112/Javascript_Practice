@@ -1,0 +1,130 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.circle{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin:10px;
+    position: relative;
+    background-color: red;
+    animation-name:circle;
+    animation-duration:5s;
+    animation-delay: 3s;
+    animation-iteration-count:2;
+    animation-direction:alternate;
+    animation-timing-function: ease;
+    /* animation-timing-function: linear; */
+    /* animation-timing-function: ease-in; */
+    /* animation-timing-function: ease-out; */
+    /* animation-timing-function: ease-in-out; */
+    /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+}
+@keyframes circle {
+    0%{
+        left:0px;
+        top:0px;
+    }
+    25%{
+        left:800px;
+        top:0px;
+    }
+    50%{
+        left:800px;
+        top:50px;
+    }
+    75%{
+        left:0px;
+        top:50px;
+    }
+    100%{
+        left:0px;
+        top:0px;
+    }
+}
+.circle2{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-left:10px;
+    margin-top:65px;
+    position: relative;
+    background-color: turquoise;
+    animation-name:circle2;
+    animation-duration:5s;
+    animation-delay: 3s;
+    animation-iteration-count:2;
+    animation-direction:alternate;
+    animation-timing-function: ease;
+    animation-fill-mode:backwards;/*Note backward isliye kaam nhi kiya kyuki , ye animation se pehle wo 0%
+                                    value retain karta hain animation ke baad nhi */
+}
+@keyframes circle2{
+    from{
+        left:0px;
+        /* height: 120px; */
+    }
+    to{
+      left:800px;
+      background-color: blue;;
+      /* height: 200px; */
+    }
+}
+.square{
+    height:120px;
+    width:120px;
+    background-color:green;
+    position: relative;
+    border-radius: 5%;
+    margin-left:10px;
+    margin-top:65px;
+    animation-name:square;
+    animation-duration:5s;
+    animation-delay:2s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:2;
+    animation-direction:alternate-reverse;
+}
+@keyframes square{
+    from{
+        background-color: brown;
+        top:0px;
+        left:0px;
+    }
+    to{
+        background-color:black;
+        top:0px;
+        left:500px;
+    }
+}
+.square2{
+    height: 120px;
+    width: 120px;
+    background-color: blue;
+    position: relative;
+    border-radius:5%;
+    margin:10px;
+    margin-top:65px;
+    animation-name:square2;
+    animation-duration: 5s;
+    animation-delay:2s;
+    animation-timing-function: ease-in-out;
+    animation-direction:normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    /* animation-fill-mode:backwards; */
+
+    
+}
+@keyframes square2{
+    from{
+        left:0px;
+        background-color: yellow;
+    }
+    to{
+        background-color: cornflowerblue;
+        left:800px;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+.grid-container {
+  display: grid;
+  grid-template-columns: 70px 70px 70px; /*Make the grid smaller than the container*/
+  gap: 10px;
+  background-color: dodgerblue;
+  padding: 10px;
+  justify-content: start;
+}
+
+.grid-container > div {
+  background-color: #f1f1f1;
+  color:#000;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container{
+    background-color: rgb(146, 128, 128);
+    color:red;
+    display:grid;
+    grid-template-rows:40px 40px 40px;
+    grid-template-columns:40px 40px 40px;
+    padding:2rem;
+    gap:1.3rem;
+    height: 500px;
+    align-content:center;
+    /* justify-items: start; */
+    /* align-items: end; */
+
+}
+.container>div{
+    background-color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+</style>
+</head>
+<body>
+
+<h1>The justify-content Property</h1>
+
+<p>Use the <em>justify-content</em> property to align the grid items inside the container.</p>
+
+<p>The value "start" value displays the grid items with equal space around them:</p>
+<p>Try by changing various property of justify-content like: "space-evenly" , "space-around" , "center", "end" and "space-between"  </p>
+
+
+<div class="grid-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+</div>
+
+<p><h2>Align-Content Property , justify-items, align-items</h2></p>
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+</body>
+</html>

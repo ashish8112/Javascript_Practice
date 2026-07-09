@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex Direction Property </title>
+        <link rel="stylesheet" href="flex_direction.css">
+    </head>
+    <body>
+        <h1>Container 1 flex-direction : row (Default)</h1>
+        <p>This is 1st Row or inside container box, all boxs are  rendered on main axis <b><em>(left to right)</em></b></p>
+        <div class="container1">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+        </div>
+        <br>
+            <hr>
+
+        <h1>Container 2 flex-direction : row-reverse</h1>
+        <p>This is 1st Row or inside container box, all boxs are  rendered on main axis <em><b>(right to left)</b></em></p>
+        <div class="container2">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+        </div>
+        <p>The first box rendered in <b>Right side first </b> and fourth box rendered on last from right to left </p>
+            <hr>
+
+        <h1>Container 3 flex-direction : column</h1>
+        <p>This is 1st Column or inside container box, all boxs are  rendered on cross-axis becuase of <b>flex-direction : column; </b> property <b>cross-axis converted to main axis </b> <em><b>(Top to Bottom)</b></em></p>
+        <div class="container3">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+        </div>
+        <p>We can see that boxes are shrink but didn't overflow from the container. as we had given<b> hieght:100px to all boxs but it didn't overflow but gets shrinked </b>
+            it is becuase of flex property that allows to boxs to shrink their hieght and width<b><em>
+            till the font-size of boxs allowed it to shrink.</em></b>
+        </p>
+        <hr>
+
+        <h1>Container 4 flex-direction : column-reverse</h1>
+        <p>Cross Axis has converted to main-axis but in reverse order by property <b>flex-direction : column-reverse </b> so all items are rendered from <b><em>(bottom to top)</em></b>
+        </p>
+        <div class="container4">
+            <div class="box1">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+        </div>
+        <p>The first box render from bottom and 4<sup>th</sup>box rendered on top side </p>
+        <hr>

@@ -1,0 +1,36 @@
+#square{
+        height:100px;
+        width:100px;
+        border-style:solid;
+        border-color:black;
+}
+#circle1{
+    height: 100px;
+    width: 100px;
+    text-align:center;
+    border-style:solid;
+    border-color:green;
+    border-radius:50%;
+}
+#circle2{
+        /* height:100px; because if we want our text in middle we need to lower the size of content hieght same as as to increase the size 
+        of top-padding because if we dont do that height of content is 100px and padding-top 30 px will add and make an entire box of 
+        130 px; becuase padding as well as content reside inside it , so after doing this all efforts we did not get our text in centre. */
+        height: 60px;
+        width:100px;
+        padding-top:40px;
+        text-align:center;
+        border-style:solid;
+        border-radius:50%;
+        border-color:purple;
+}
+#border{
+        border-width:15px;
+        border-style:solid;
+        border-color:red;
+        border-radius:15px;
+
+}
+#border_shorthand{
+            border:10px dashed blue;
+}

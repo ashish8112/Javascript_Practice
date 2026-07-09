@@ -1,0 +1,33 @@
+#section1{
+    box-sizing:border-box;
+    border:2px solid red;
+
+}
+#section2{
+    box-sizing:border-box;
+    border:2px solid green;
+}
+#img2{
+    float:left;
+    margin-right:15px;
+}
+#section2{
+    overflow:auto;
+    /* with overflow property the image will reside outside the box */
+}
+#section3 {
+    box-sizing:border-box;
+    border:2px solid blue;
+    background-image: linear-gradient(to left bottom, red,green);
+    overflow: auto;
+
+}
+#img3{
+    float:right;
+}
+#img4{
+    float:left;
+}
+#para3{
+    clear:both;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>align-self Example</title>
+  <style>
+    .container {
+      display: flex;
+      height: 200px;
+      border: 2px solid black;
+      align-items: center; /* Default alignment for all items */
+    }
+
+    .container>div {
+      width: 100px;
+      background-color: lightblue;
+      border: 1px solid blue;
+      text-align: center;
+      line-height: 50px;
+      margin: 5px;
+    }
+
+    .item2 {
+      align-self: flex-start; /* This item aligns to the start of the cross axis */
+    }
+
+    .item3 {
+      align-self: flex-end; /* This item aligns to the end of the cross axis */
+    }
+
+    .item4{
+      align-self: stretch; /* This item stretches to fill the cross axis */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item2">Item 2</div>
+    <div class="item3">Item 3</div>
+    <div class="item4">Item 4</div>
+  </div>
+</body>
+</html>

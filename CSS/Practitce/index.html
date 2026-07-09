@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        nav{
+            display:flex;
+            flex-direction: column;
+            margin-top:2px;
+            background-color: beige;
+        }
+        nav :first-child
+        {
+            border:0.5px solid purple;
+            background-color: #04aa6d;
+            color:#ffffff;
+        }
+        .box{
+            height: 32px;
+            text-align: left;
+            line-height: 32px;
+            color:black;
+           
+            padding-left: 9px;
+           
+            outline: red;    
+        }
+        
+        .box:hover{
+                color: #f1f1f1;
+                background-color:#000000;
+                border:1px solid red;
+                cursor: pointer;
+        }
+        .first:hover{
+            cursor: pointer;
+            border:1px solid red;
+        }
+        .first{
+            height: 32px;
+            text-align: left;
+            line-height: 32px;
+            color:black;
+           
+            padding-left: 9px;
+           
+            outline: red; 
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="first">Home</div>
+        <div class="box">News</div>
+        <div class="box">Contact</div>
+        <div class="box">About</div>
+    </nav>
+</body>
+</html>

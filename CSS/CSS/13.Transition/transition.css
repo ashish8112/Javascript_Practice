@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.rectangle{
+    height: 150px;
+    width: 190px;
+    margin:10px;
+    border:2px solid black;
+    background-color: aqua;
+    transition:width 4s linear 0.5s;
+}
+.rectangle:hover{
+    width: 450px;
+}
+.square{
+    height: 150px;
+    width: 150px;
+    border:2px solid black;
+    margin:50px 10px;
+    background-image: linear-gradient(to bottom, #f9ce34,#ee2a7b, #6228d7);
+
+    /* background-color: blueviolet; */
+    transition: height 4s linear, width 2s linear 3s,transform 2s linear 5s ;
+}
+.square:hover{
+    height: 300px;
+    width: 300px;
+    transform: rotate(180deg);
+}
+.circle{
+    height:150px;
+    width:150px;
+    border-radius:50%;
+    margin:50px 10px;
+    border:2px solid black;
+    background-color: chartreuse;
+    transition: all 4s linear 1s;
+}
+.circle:hover{
+    height:300px;
+    width:300px;
+    background-color: chocolate;
+    border-color: #6228d7;
+}

@@ -1,0 +1,32 @@
+.para1{
+    box-sizing:border-box;
+    border:2px solid black;
+    height: 65px;
+    background-color: pink;
+    /* We can see Overflow */
+}
+.para2{
+    box-sizing: border-box;
+    border:2px solid red;
+    height: 65px;
+    background-color: grey;
+    overflow: hidden;
+    /* Rest of overflow part not visible */
+}
+.para3{
+    box-sizing: border-box;
+    border:2px solid blue;
+    height: 65px;
+    background-color: aqua;
+    overflow: scroll;
+    /* we can see scroll bar horizontally as well as vertically */
+}
+.para4{
+    box-sizing: border-box;
+    border:2px solid green;
+    height: 65px;
+    background-color: yellowgreen;
+    overflow: auto;;
+    /* This is perfect it shows scrollbar as per need only , like not scroll property to show both 
+    side scroll , This shows scroll bar as per need of doucment only*/
+}
