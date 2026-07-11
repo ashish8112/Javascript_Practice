@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <style>
+      *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+form{
+  padding: 40px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  box-shadow: 0 54px 55px #00000040,0 -12px 30px #0000001f,0 4px 6px #0000001f,0 12px 13px #0000002b,0 -3px 5px #00000017;
+}
+h1{
+  margin-bottom: 16px;
+  text-align: center;
+}
+input{
+  width: 100%;
+  border-radius: 6px;
+  border-color: grey;
+  margin-bottom: 14px;
+  border:1px solid #d1d5db;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  /* outline: none; */
+}
+input:focus{
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px #2563eb26;
+  outline: none;
+}
+label{
+  color: hsl(0, 0%, 30%);
+  margin:4px 0px;
+}
+button{
+  border-radius: 8px;
+  outline: none;
+  background-color: #2563eb;
+  padding: 12px 14px;
+  color:#fff;
+  border: none;
+  width: 100%;
+  margin: 20px 0px ;
+  cursor: pointer;
+}
+p{
+  color:hsl(0, 0%, 30%);
+  text-align:center;
+}
+a{
+  text-decoration: none;
+  text-align: center;
+  color:#1b5eee;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body>
+      <div class="login-container">
+        <form>
+          <h1>Welcome Back</h1>
+          <label >Email</label>
+          <input type="email">
+          <label>Password</label>
+          <input type="password">
+          <button>Login</button>
+          <p>Don't have account ? <a href="#">Signup</a></p>
+        </form>
+      </div>
+  </body>
+</html>
